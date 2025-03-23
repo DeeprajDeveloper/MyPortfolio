@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepraj Adhikary | Playground</title>
+    <link rel="stylesheet" href="{{ url_for('bp_gui.static', filename='styles/test.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Playground</h1>
+    <div class="playground_container">
+        <button type="button" class="button_theme lights_on" id="button_theme">
+            <img class="icon_20x" id="external" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Flashlight-On.svg') }}" />
+        </button>
+        
+        <div class="input_container">
+            <div class="label_container">
+                <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/User.svg') }}" />
+                <label for="user_name">User</label>
+            </div>
+            <input type="text" name="user_name" id="user_name" placeholder="Jane Doe">
+        </div>
+        
+
+        <div class="textarea_container">
+            <div class="label_container">
+                <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Chat-Unread.svg') }}" />
+                <label for="message">Message</label>
+            </div>
+            <textarea name="message" id="message" rows="10" placeholder="Write a message you want to share"></textarea>
+        </div>
+
+        <button type="button" name="submit" id="submit" class="button_container">
+            Send Message
+            <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Plain.svg') }}" />
+        </button>
+        
+        <a href="javascript:script(0);" class="social_media_links">
+            <div class="social_text_container">
+                <img class="icon_28x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/social_media/instagram.png') }}" />
+                <span>@deep_dev_uiux | Instagram</span>
+            </div>
+            <img class="icon_20x" id="external" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/external-link.svg') }}" />
+        </a>
+
+
+    </div>
+    <!-- <script src="{{ url_for('bp_gui.static', filename='scripts/test.js') }}"></script> -->
+</body>
+</html>

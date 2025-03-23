@@ -1,0 +1,54 @@
+{
+	"myInformation": {
+		"myIndustryExperience": [
+			{
+				"experienceName": "IT Industry Experience",
+				"yearsExperienceDisplayText": "6+"
+			},
+			{
+				"experienceName": "Quality & Test-Data Analyst",
+				"yearsExperienceDisplayText": "5"
+			},
+			{
+				"experienceName": "Business Analyst",
+				"yearsExperienceDisplayText": "1"
+			}
+		],
+		"displayBannerTechnologyStack": [
+			"Python Flask App Development", 
+			"Website Design", 
+			"Dashboard Design", 
+			"Wireframing", 
+			"Quality Assurance Testing", 
+			"Business Requirement Analysis"
+		],
+		"aboutMe": "Lorem ipsum dolor sit amet consectetur. Vulputate suspendisse amet aliquet tristique maecenas. Lacus non convallis integer feugiat sit. Pellentesque gravida vitae facilisis eu eleifend viverra neque facilisis. Lacinia lobortis enim libero aenean. Odio at nunc sem ipsum turpis viverra et lectus facilisi. Dolor imperdiet in nulla quis dui placerat facilisi tincidunt. Non massa lacus in ligula accumsan adipiscing. Dui vel mi iaculis vitae ipsum urna rhoncus nibh malesuada. Egestas integer at aliquet eget integer vivamus. A volutpat enim semper praesent ut tempor in neque. Quis placerat libero mattis pellentesque ullamcorper. Volutpat sapien magna a ac urna ornare augue ultrices. Nisi viverra malesuada viverra eget. Nibh blandit gravida tellus mi vivamus ornare enim platea quisque. Nunc ut eu congue pellentesque blandit fringilla. Netus felis vitae proin egestas pharetra. Est facilisi porta pellentesque morbi nibh. Sit massa eros mauris imperdiet aliquam. Quisque ultrices ac amet cras. Id morbi lorem sagittis duis massa id. Magna lacinia ut scelerisque vulputate nam fames et aliquet. Tellus lorem feugiat sit risus urna ornare. Vulputate vitae ut gravida amet a in augue hac. Enim eu tincidunt in nibh dictum curabitur eu id. Enim ornare id pellentesque ipsum ullamcorper eu pellentesque.",
+		"topDisplayProjectIdentifiers": [1, 2],
+		"myExperties": [
+			{
+				"expertiesName": "Python",
+				"iconImagePath": ""
+			},
+			{
+				"expertiesName": "Javascript",
+				"iconImagePath": ""
+			},
+			{
+				"expertiesName": "HTML",
+				"iconImagePath": ""
+			},
+			{
+				"expertiesName": "CSS",
+				"iconImagePath": ""
+			},
+			{
+				"expertiesName": "Java",
+				"iconImagePath": ""
+			},
+			{
+				"expertiesName": "z/OS",
+				"iconImagePath": ""
+			}
+		]
+	}
+}
