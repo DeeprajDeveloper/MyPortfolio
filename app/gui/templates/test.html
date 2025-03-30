@@ -4,50 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepraj Adhikary | Playground</title>
+    <link rel="shortcut icon" href="{{ url_for('bp_gui.static', filename='images/logo/DA_BG_Black.svg') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('bp_gui.static', filename='styles/test.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Playground</h1>
+    <nav class="nav_container">
+        <div class="menu_item float_even">
+            <img src="{{ url_for('bp_gui.static', filename='images/logo/DA_NoBG_Black.svg') }}" alt="" srcset="" class="icon_40x">
+            <span>My Playground</span>
+        </div>
+        <div class="menu_item float_right">
+            <a href="javascript:script(0);" class="menu_link">
+                <svg class="icon_20x" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Home--Streamline-Solar">
+                    <desc>Home Streamline Icon: https://streamlinehq.com</desc>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M2.5192 7.82274C2 8.77128 2 9.91549 2 12.2039v1.5211c0 3.9008 0 5.8513 1.17157 7.0631C4.34315 22 6.22876 22 10 22h4c3.7712 0 5.6569 0 6.8284 -1.2119C22 19.5763 22 17.6258 22 13.725v-1.5211c0 -2.28841 0 -3.43262 -0.5192 -4.38116 -0.5192 -0.94853 -1.4677 -1.53723 -3.3648 -2.71462l-2 -1.24125C14.1106 2.62229 13.1079 2 12 2c-1.1079 0 -2.11061 0.62229 -4.11597 1.86687l-2 1.24126C3.98695 6.28551 3.0384 6.87421 2.5192 7.82274ZM9 17.25c-0.41421 0 -0.75 0.3358 -0.75 0.75s0.33579 0.75 0.75 0.75h6c0.4142 0 0.75 -0.3358 0.75 -0.75s-0.3358 -0.75 -0.75 -0.75H9Z"
+                        stroke-width="1"></path>
+                </svg>
+                Home
+            </a>
+            <a href="javascript:script(0);" class="menu_link">
+                <svg class="icon_20x" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Telescope--Streamline-Solar">
+                    <desc>Telescope Streamline Icon: https://streamlinehq.com</desc>
+                    <path
+                        d="M17.976 2.60214c0.4634 -0.25959 0.766 -0.42785 1.0065 -0.52377 0.2265 -0.09032 0.3257 -0.08572 0.3933 -0.06817 0.0667 0.01734 0.1533 0.06038 0.3016 0.24683 0.1582 0.1989 0.3331 0.4905 0.6008 0.94044l1.1039 1.85503c0.2678 0.45007 0.4406 0.7426 0.5389 0.97465 0.0923 0.218 0.0853 0.30799 0.0694 0.36586 -0.0163 0.05875 -0.0578 0.14172 -0.2519 0.28702 -0.2056 0.15394 -0.5069 0.32397 -0.9704 0.58363l-3.932 2.20252c-0.4386 0.24567 -0.7223 0.40335 -0.9471 0.49281 -0.2106 0.08381 -0.2965 0.07681 -0.3509 0.06241 -0.0544 -0.0144 -0.1323 -0.05068 -0.2723 -0.2272 -0.1493 -0.18838 -0.3152 -0.46495 -0.5706 -0.89413l-1.179 -1.98126c-0.2623 -0.44085 -0.4311 -0.72669 -0.5272 -0.9533 -0.0903 -0.21271 -0.0831 -0.29912 -0.0684 -0.35349 0.0148 -0.05436 0.0523 -0.13274 0.2383 -0.27241 0.198 -0.14881 0.489 -0.31307 0.9395 -0.56542l3.8776 -2.17205Z"
+                        stroke-width="1"></path>
+                    <path
+                        d="m8.63783 8.4508 3.44927 -1.93211c0.1268 0.26307 0.3036 0.56022 0.5037 0.89645l1.2142 2.04031c0.1832 0.30789 0.3467 0.58265 0.5043 0.80725l-1.5469 0.8665 4.176 9.789c0.1692 0.3966 -0.0194 0.8535 -0.4212 1.0205 -0.4019 0.167 -0.8648 -0.0191 -1.034 -0.4157l-3.4829 -8.1645 -3.48298 8.1645c-0.1692 0.3966 -0.63213 0.5827 -1.03397 0.4157 -0.40185 -0.167 -0.59045 -0.6239 -0.42125 -1.0205l3.6973 -8.667c-0.4024 0.2252 -0.6693 0.3719 -0.88288 0.4569 -0.2106 0.0838 -0.29653 0.0768 -0.3509 0.0624 -0.05438 -0.0144 -0.13235 -0.0507 -0.27228 -0.2272 -0.14934 -0.1884 -0.3152 -0.465 -0.57059 -0.8941l-0.62706 -1.0538c-0.26233 -0.4408 -0.43112 -0.72667 -0.52729 -0.95328 -0.09026 -0.21271 -0.0831 -0.29912 -0.06835 -0.35349 0.01476 -0.05436 0.05233 -0.13274 0.23825 -0.27241 0.19808 -0.14881 0.48904 -0.31307 0.93953 -0.56542Z"
+                        stroke-width="1"></path>
+                    <path
+                        d="m6.62684 10.196 -3.3949 1.9016c-0.46355 0.2597 -0.76486 0.4297 -0.97046 0.5837 -0.19407 0.1453 -0.23562 0.2282 -0.25184 0.287 -0.01599 0.0579 -0.02297 0.1479 0.06938 0.3659 0.0983 0.232 0.27105 0.5245 0.53888 0.9746 0.26774 0.4499 0.44258 0.7415 0.60078 0.9404 0.1483 0.1865 0.23496 0.2295 0.30167 0.2469 0.06753 0.0175 0.16672 0.0221 0.39323 -0.0682 0.24053 -0.0959 0.54314 -0.2642 1.00656 -0.5238l3.37709 -1.8917c-0.1578 -0.2247 -0.32134 -0.4996 -0.50474 -0.8078l-0.66219 -1.1128c-0.19995 -0.336 -0.37667 -0.6329 -0.50346 -0.8958Z"
+                        stroke-width="1"></path>
+                </svg>
+                Projects
+            </a>
+            <a href="javascript:script(0);" class="menu_link">
+                <svg class="icon_20x" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Mention-Square--Streamline-Solar">
+                    <desc>Mention Square Streamline Icon: https://streamlinehq.com</desc>
+                    <path
+                        d="M12 10.35c0.9113 0 1.65 0.7387 1.65 1.65 0 0.9113 -0.7387 1.65 -1.65 1.65 -0.9113 0 -1.65 -0.7387 -1.65 -1.65 0 -0.9113 0.7387 -1.65 1.65 -1.65Z"
+                        stroke-width="1"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.46447 3.46447C2 4.92893 2 7.28595 2 12c0 4.714 0 7.0711 1.46447 8.5355C4.92893 22 7.28595 22 12 22c4.714 0 7.0711 0 8.5355 -1.4645C22 19.0711 22 16.714 22 12c0 -4.71405 0 -7.07107 -1.4645 -8.53553C19.0711 2 16.714 2 12 2 7.28595 2 4.92893 2 3.46447 3.46447ZM6.75 12c0 -2.8995 2.3505 -5.25 5.25 -5.25s5.25 2.3505 5.25 5.25c0 0.6327 -0.1116 1.2376 -0.3155 1.7973 -0.0354 0.0971 -0.105 0.2016 -0.2162 0.3042l-0.0806 0.0743c-0.3008 0.2775 -0.7524 0.313 -1.0929 0.086 -0.2467 -0.1644 -0.3948 -0.4412 -0.3948 -0.7377V12c0 -1.7397 -1.4103 -3.15 -3.15 -3.15 -1.7397 0 -3.15 1.4103 -3.15 3.15 0 1.7397 1.4103 3.15 3.15 3.15 0.7017 0 1.3499 -0.2295 1.8735 -0.6175 0.1822 0.3908 0.4696 0.731 0.8392 0.9774 0.9167 0.6111 2.1324 0.5153 2.9421 -0.2316l0.0806 -0.0743c0.2501 -0.2308 0.4756 -0.5284 0.6085 -0.8932 0.263 -0.7219 0.4061 -1.5005 0.4061 -2.3108 0 -3.72792 -3.0221 -6.75 -6.75 -6.75 -3.72792 0 -6.75 3.02208 -6.75 6.75 0 3.7279 3.02208 6.75 6.75 6.75 0.4142 0 0.75 -0.3358 0.75 -0.75s-0.3358 -0.75 -0.75 -0.75c-2.8995 0 -5.25 -2.3505 -5.25 -5.25Z"
+                        stroke-width="1"></path>
+                </svg>
+                Contact
+            </a>
+            <button type="button" class="button_theme lights_on" id="button_theme">
+                <svg viewBox="-0.625 -0.625 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    id="Flashlight-On--Streamline-Solar-Ar" height="20" width="20">
+                    <desc>Flashlight On Streamline Icon: https://streamlinehq.com</desc>
+                    <path
+                        d="M11.71875 17.1875v-3.3930468749999996c0 -0.638671875 0 -0.958046875 0.11890625 -1.2451562500000002 0.11898437499999999 -0.2871875 0.344765625 -0.51296875 0.7964062500000001 -0.9646093749999999l2.53328125 -2.53328125c0.22578125 -0.22578125 0.33875 -0.33875 0.39820312500000005 -0.482265625 0.059453125 -0.14359375 0.059453125 -0.30328125 0.059453125 -0.6225781250000001V7.8125c0 -0.7365703125 0 -1.1048515625 -0.228828125 -1.3336796874999999C15.16734375 6.25 14.799062499999998 6.25 14.0625 6.25H4.6875c-0.7365703125 0 -1.1048515625 0 -1.3336796874999999 0.22882031249999998C3.125 6.7076484375 3.125 7.0759296875 3.125 7.8125v0.1340625c0 0.319296875 0 0.47898437499999996 0.059468749999999994 0.6225781250000001 0.059468749999999994 0.143515625 0.172375 0.256484375 0.3981796875 0.482265625l2.5333125 2.53328125c0.45160937500000004 0.45164062499999996 0.6774140625 0.677421875 0.7963515625 0.9646093749999999C7.03125 12.83640625 7.03125 13.15578125 7.03125 13.794453125V17.1875"
+                        stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="M11.71875 12.5H7.03125" stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="M3.515625 8.59375h11.71875" stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="M9.375 3.90625V1.5625" stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="M6.25 3.90625 4.6875 2.34375" stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="m12.5 3.90625 1.5625 -1.5625" stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="M9.375 14.84375v1.5625" stroke-linecap="round" stroke-width="1.25"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <nav class="nav_container_burger">
+        <div class="menu_item float_left">
+            <img src="{{ url_for('bp_gui.static', filename='images/logo/DA_NoBG_Black.svg') }}" alt="" srcset=""
+                class="icon_40x">
+            <span class="header">My Playground</span>
+        </div>
+
+        <div class="burger_icon" id="burger_icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="menu_burger float_right" id="burger_menu">
+            <a href="javascript:script(0);" class="menu_link" id="home">
+                <svg class="icon_20x" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    id="Home--Streamline-Solar">
+                    <desc>Home Streamline Icon: https://streamlinehq.com</desc>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M2.5192 7.82274C2 8.77128 2 9.91549 2 12.2039v1.5211c0 3.9008 0 5.8513 1.17157 7.0631C4.34315 22 6.22876 22 10 22h4c3.7712 0 5.6569 0 6.8284 -1.2119C22 19.5763 22 17.6258 22 13.725v-1.5211c0 -2.28841 0 -3.43262 -0.5192 -4.38116 -0.5192 -0.94853 -1.4677 -1.53723 -3.3648 -2.71462l-2 -1.24125C14.1106 2.62229 13.1079 2 12 2c-1.1079 0 -2.11061 0.62229 -4.11597 1.86687l-2 1.24126C3.98695 6.28551 3.0384 6.87421 2.5192 7.82274ZM9 17.25c-0.41421 0 -0.75 0.3358 -0.75 0.75s0.33579 0.75 0.75 0.75h6c0.4142 0 0.75 -0.3358 0.75 -0.75s-0.3358 -0.75 -0.75 -0.75H9Z"
+                        stroke-width="1"></path>
+                </svg>
+                <span class="link_name">Home</span>
+            </a>
+            <a href="javascript:script(0);" class="menu_link" id="project">
+                <svg class="icon_20x" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    id="Telescope--Streamline-Solar">
+                    <desc>Telescope Streamline Icon: https://streamlinehq.com</desc>
+                    <path
+                        d="M17.976 2.60214c0.4634 -0.25959 0.766 -0.42785 1.0065 -0.52377 0.2265 -0.09032 0.3257 -0.08572 0.3933 -0.06817 0.0667 0.01734 0.1533 0.06038 0.3016 0.24683 0.1582 0.1989 0.3331 0.4905 0.6008 0.94044l1.1039 1.85503c0.2678 0.45007 0.4406 0.7426 0.5389 0.97465 0.0923 0.218 0.0853 0.30799 0.0694 0.36586 -0.0163 0.05875 -0.0578 0.14172 -0.2519 0.28702 -0.2056 0.15394 -0.5069 0.32397 -0.9704 0.58363l-3.932 2.20252c-0.4386 0.24567 -0.7223 0.40335 -0.9471 0.49281 -0.2106 0.08381 -0.2965 0.07681 -0.3509 0.06241 -0.0544 -0.0144 -0.1323 -0.05068 -0.2723 -0.2272 -0.1493 -0.18838 -0.3152 -0.46495 -0.5706 -0.89413l-1.179 -1.98126c-0.2623 -0.44085 -0.4311 -0.72669 -0.5272 -0.9533 -0.0903 -0.21271 -0.0831 -0.29912 -0.0684 -0.35349 0.0148 -0.05436 0.0523 -0.13274 0.2383 -0.27241 0.198 -0.14881 0.489 -0.31307 0.9395 -0.56542l3.8776 -2.17205Z"
+                        stroke-width="1"></path>
+                    <path
+                        d="m8.63783 8.4508 3.44927 -1.93211c0.1268 0.26307 0.3036 0.56022 0.5037 0.89645l1.2142 2.04031c0.1832 0.30789 0.3467 0.58265 0.5043 0.80725l-1.5469 0.8665 4.176 9.789c0.1692 0.3966 -0.0194 0.8535 -0.4212 1.0205 -0.4019 0.167 -0.8648 -0.0191 -1.034 -0.4157l-3.4829 -8.1645 -3.48298 8.1645c-0.1692 0.3966 -0.63213 0.5827 -1.03397 0.4157 -0.40185 -0.167 -0.59045 -0.6239 -0.42125 -1.0205l3.6973 -8.667c-0.4024 0.2252 -0.6693 0.3719 -0.88288 0.4569 -0.2106 0.0838 -0.29653 0.0768 -0.3509 0.0624 -0.05438 -0.0144 -0.13235 -0.0507 -0.27228 -0.2272 -0.14934 -0.1884 -0.3152 -0.465 -0.57059 -0.8941l-0.62706 -1.0538c-0.26233 -0.4408 -0.43112 -0.72667 -0.52729 -0.95328 -0.09026 -0.21271 -0.0831 -0.29912 -0.06835 -0.35349 0.01476 -0.05436 0.05233 -0.13274 0.23825 -0.27241 0.19808 -0.14881 0.48904 -0.31307 0.93953 -0.56542Z"
+                        stroke-width="1"></path>
+                    <path
+                        d="m6.62684 10.196 -3.3949 1.9016c-0.46355 0.2597 -0.76486 0.4297 -0.97046 0.5837 -0.19407 0.1453 -0.23562 0.2282 -0.25184 0.287 -0.01599 0.0579 -0.02297 0.1479 0.06938 0.3659 0.0983 0.232 0.27105 0.5245 0.53888 0.9746 0.26774 0.4499 0.44258 0.7415 0.60078 0.9404 0.1483 0.1865 0.23496 0.2295 0.30167 0.2469 0.06753 0.0175 0.16672 0.0221 0.39323 -0.0682 0.24053 -0.0959 0.54314 -0.2642 1.00656 -0.5238l3.37709 -1.8917c-0.1578 -0.2247 -0.32134 -0.4996 -0.50474 -0.8078l-0.66219 -1.1128c-0.19995 -0.336 -0.37667 -0.6329 -0.50346 -0.8958Z"
+                        stroke-width="1"></path>
+                </svg>
+                <span class="link_name">Projects</span>
+            </a>
+            <a href="javascript:script(0);" class="menu_link" id="contact">
+                <svg class="icon_20x" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    id="Mention-Square--Streamline-Solar">
+                    <desc>Mention Square Streamline Icon: https://streamlinehq.com</desc>
+                    <path
+                        d="M12 10.35c0.9113 0 1.65 0.7387 1.65 1.65 0 0.9113 -0.7387 1.65 -1.65 1.65 -0.9113 0 -1.65 -0.7387 -1.65 -1.65 0 -0.9113 0.7387 -1.65 1.65 -1.65Z"
+                        stroke-width="1"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3.46447 3.46447C2 4.92893 2 7.28595 2 12c0 4.714 0 7.0711 1.46447 8.5355C4.92893 22 7.28595 22 12 22c4.714 0 7.0711 0 8.5355 -1.4645C22 19.0711 22 16.714 22 12c0 -4.71405 0 -7.07107 -1.4645 -8.53553C19.0711 2 16.714 2 12 2 7.28595 2 4.92893 2 3.46447 3.46447ZM6.75 12c0 -2.8995 2.3505 -5.25 5.25 -5.25s5.25 2.3505 5.25 5.25c0 0.6327 -0.1116 1.2376 -0.3155 1.7973 -0.0354 0.0971 -0.105 0.2016 -0.2162 0.3042l-0.0806 0.0743c-0.3008 0.2775 -0.7524 0.313 -1.0929 0.086 -0.2467 -0.1644 -0.3948 -0.4412 -0.3948 -0.7377V12c0 -1.7397 -1.4103 -3.15 -3.15 -3.15 -1.7397 0 -3.15 1.4103 -3.15 3.15 0 1.7397 1.4103 3.15 3.15 3.15 0.7017 0 1.3499 -0.2295 1.8735 -0.6175 0.1822 0.3908 0.4696 0.731 0.8392 0.9774 0.9167 0.6111 2.1324 0.5153 2.9421 -0.2316l0.0806 -0.0743c0.2501 -0.2308 0.4756 -0.5284 0.6085 -0.8932 0.263 -0.7219 0.4061 -1.5005 0.4061 -2.3108 0 -3.72792 -3.0221 -6.75 -6.75 -6.75 -3.72792 0 -6.75 3.02208 -6.75 6.75 0 3.7279 3.02208 6.75 6.75 6.75 0.4142 0 0.75 -0.3358 0.75 -0.75s-0.3358 -0.75 -0.75 -0.75c-2.8995 0 -5.25 -2.3505 -5.25 -5.25Z"
+                        stroke-width="1"></path>
+                </svg>
+                <span class="link_name">Contact</span>
+            </a>
+            <button type="button" class="button_theme lights_on" id="button_theme">
+                <svg class="icon_20x" viewBox="-0.625 -0.625 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    id="Flashlight-On--Streamline-Solar-Ar" height="20" width="20">
+                    <desc>Flashlight On Streamline Icon: https://streamlinehq.com</desc>
+                    <path
+                        d="M11.71875 17.1875v-3.3930468749999996c0 -0.638671875 0 -0.958046875 0.11890625 -1.2451562500000002 0.11898437499999999 -0.2871875 0.344765625 -0.51296875 0.7964062500000001 -0.9646093749999999l2.53328125 -2.53328125c0.22578125 -0.22578125 0.33875 -0.33875 0.39820312500000005 -0.482265625 0.059453125 -0.14359375 0.059453125 -0.30328125 0.059453125 -0.6225781250000001V7.8125c0 -0.7365703125 0 -1.1048515625 -0.228828125 -1.3336796874999999C15.16734375 6.25 14.799062499999998 6.25 14.0625 6.25H4.6875c-0.7365703125 0 -1.1048515625 0 -1.3336796874999999 0.22882031249999998C3.125 6.7076484375 3.125 7.0759296875 3.125 7.8125v0.1340625c0 0.319296875 0 0.47898437499999996 0.059468749999999994 0.6225781250000001 0.059468749999999994 0.143515625 0.172375 0.256484375 0.3981796875 0.482265625l2.5333125 2.53328125c0.45160937500000004 0.45164062499999996 0.6774140625 0.677421875 0.7963515625 0.9646093749999999C7.03125 12.83640625 7.03125 13.15578125 7.03125 13.794453125V17.1875"
+                        stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="M11.71875 12.5H7.03125" stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="M3.515625 8.59375h11.71875" stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="M9.375 3.90625V1.5625" stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="M6.25 3.90625 4.6875 2.34375" stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="m12.5 3.90625 1.5625 -1.5625" stroke-linecap="round" stroke-width="1.25"></path>
+                    <path d="M9.375 14.84375v1.5625" stroke-linecap="round" stroke-width="1.25"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
     <div class="playground_container">
-        <button type="button" class="button_theme lights_on" id="button_theme">
-            <img class="icon_20x" id="external" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Flashlight-On.svg') }}" />
-        </button>
-        
-        <div class="input_container">
-            <div class="label_container">
-                <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/User.svg') }}" />
-                <label for="user_name">User</label>
+
+        <div class="element_container">
+            <h2>Input Fields</h2>
+            
+            <div class="input_container">
+                <div class="label_container">
+                    <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/User.svg') }}" />
+                    <label for="user_name">User</label>
+                </div>
+                <input type="text" name="user_name" id="user_name" placeholder="Jane Doe">
             </div>
-            <input type="text" name="user_name" id="user_name" placeholder="Jane Doe">
+            
+            
+            <div class="textarea_container">
+                <div class="label_container">
+                    <img class="icon_20x" alt="Banner GIF"
+                        src="{{ url_for('bp_gui.static', filename='images/icons/Chat-Unread.svg') }}" />
+                    <label for="message">Message</label>
+                </div>
+                <textarea name="message" id="message" rows="10" placeholder="Write a message you want to share"></textarea>
+            </div>
+        </div>
+
+        <div class="element_container">
+            <h2>Clickable Buttons</h2>
+            <button type="button" name="submit" id="submit" class="button_container">
+                Send Message
+                <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Plain.svg') }}" />
+            </button>
+            
+            <a href="javascript:script(0);" class="social_media_links">
+                <div class="social_text_container">
+                    <img class="icon_28x" alt="Banner GIF"
+                        src="{{ url_for('bp_gui.static', filename='images/social_media/instagram.png') }}" />
+                    <span>@deep_dev_uiux | Instagram</span>
+                </div>
+                <img class="icon_20x" id="external" alt="Banner GIF"
+                    src="{{ url_for('bp_gui.static', filename='images/icons/external-link.svg') }}" />
+            </a>
+        </div>
+
+        <div class="element_container">
+            <h2>Radio & Check Buttons</h2>
+            
+            <div class="radio_container">
+                <div class="radio_item">
+                    <input type="radio" name="radio" id="radio1" />
+                    <label for="radio1">Radio Button 1</label>
+                </div>
+                <div class="radio_item">
+                    <input type="radio" name="radio" id="radio2" />
+                    <label for="radio2">Radio Button 2</label>
+                </div>
+                <div class="radio_item">
+                    <input type="radio" name="radio" id="radio3" />
+                    <label for="radio3">Radio Button 3</label>
+                </div>
+            </div>
+
+            <div class="check_container">
+                <div class="check_item">
+                    <input type="checkbox" name="check" id="check1" />
+                    <label for="check1">Check Button 1</label>
+                </div>
+                <div class="check_item">
+                    <input type="checkbox" name="check" id="check2" />
+                    <label for="check2">Check Button 2</label>
+                </div>
+                <div class="check_item">
+                    <input type="checkbox" name="check" id="check3" />
+                    <label for="check3">Check Button 3</label>
+                </div>
+            </div>
+        
         </div>
         
-
-        <div class="textarea_container">
-            <div class="label_container">
-                <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Chat-Unread.svg') }}" />
-                <label for="message">Message</label>
-            </div>
-            <textarea name="message" id="message" rows="10" placeholder="Write a message you want to share"></textarea>
-        </div>
-
-        <button type="button" name="submit" id="submit" class="button_container">
-            Send Message
-            <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Plain.svg') }}" />
-        </button>
-        
-        <a href="javascript:script(0);" class="social_media_links">
-            <div class="social_text_container">
-                <img class="icon_28x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/social_media/instagram.png') }}" />
-                <span>@deep_dev_uiux | Instagram</span>
-            </div>
-            <img class="icon_20x" id="external" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/external-link.svg') }}" />
-        </a>
-
-
     </div>
-    <!-- <script src="{{ url_for('bp_gui.static', filename='scripts/test.js') }}"></script> -->
+    <script src="{{ url_for('bp_gui.static', filename='scripts/test.js') }}"></script>
 </body>
 </html>

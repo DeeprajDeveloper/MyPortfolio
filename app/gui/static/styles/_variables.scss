@@ -18,19 +18,21 @@ $color_prim_neutral_900     : #171717;
 $color_prim_neutral_950     : #0a0a0a;
 
 // Secondary Color
-$color_sec_mutedgold_main    : #eab308;
+$color_sec_mutedgold_main   : #eab308;
 
-$color_sec_mutedgold_050     : #fefae6;
-$color_sec_mutedgold_100     : #fef4cd;
-$color_sec_mutedgold_200     : #fde99b;
-$color_sec_mutedgold_300     : #fcdf69;
-$color_sec_mutedgold_400     : #fbd437;
-$color_sec_mutedgold_500     : #fac905;
-$color_sec_mutedgold_600     : #c8a104;
-$color_sec_mutedgold_700     : #967903;
-$color_sec_mutedgold_800     : #645002;
-$color_sec_mutedgold_900     : #322801;
-$color_sec_mutedgold_950     : #191401;
+$color_sec_mutedgold_050    : #fefae6;
+$color_sec_mutedgold_100    : #fef4cd;
+$color_sec_mutedgold_200    : #fde99b;
+$color_sec_mutedgold_300    : #fcdf69;
+$color_sec_mutedgold_400    : #fbd437;
+$color_sec_mutedgold_500    : #fac905;
+$color_sec_mutedgold_600    : #c8a104;
+$color_sec_mutedgold_700    : #967903;
+$color_sec_mutedgold_800    : #645002;
+$color_sec_mutedgold_900    : #322801;
+$color_sec_mutedgold_950    : #191401;
+
+$color_white                : #ffffff;
 
 
 // ----------------------------------------------------------
@@ -39,29 +41,4 @@ $color_sec_mutedgold_950     : #191401;
 
 $font_header    : "Bricolage Grotesque", "Calibri", sans-serif;
 $font_body      : "Open Sans", "Calibri", sans-serif;
-
-
-// ----------------------------------------------------------
-//              OVERRIDING DEFAULT ELEMENT STYLE
-// ----------------------------------------------------------
-
-svg { background-color: none; }
-button { border: none; background-color: none; &:hover { cursor: pointer; } }
-a { text-decoration: none; color: inherit; font-size: 14px; font-weight: 600; }
-
-
-// ----------------------------------------------------------
-//                      STATIC FUNCTIONS
-// ----------------------------------------------------------
-
-.icon_16x { width: 16px; height: 16px; background-color: none; }
-.icon_20x { width: 20px; height: 20px; background-color: none; }
-.icon_24x { width: 24px; height: 24px; background-color: none; }
-.icon_28x { width: 28px; height: 28px; background-color: none; }
-.icon_32x { width: 32px; height: 32px; background-color: none; }
-.icon_36x { width: 36px; height: 36px; background-color: none; }
-.icon_40x { width: 40px; height: 40px; background-color: none; }
-.icon_44x { width: 44px; height: 44px; background-color: none; }
-.lights_on { background-color: $color_sec_mutedgold_400; border: 1px solid $color_sec_mutedgold_400; }
-.lights_off { background-color: $color_prim_neutral_700; border: 1px solid $color_prim_neutral_700; }
 
