@@ -20,3 +20,18 @@ def admin():
 @bp_gui.route('/home', methods=['GET'])
 def home():
     return render_template('index.html', author=const.AUTHOR, version=const.VERSION)
+
+
+@bp_gui.route('/explore', methods=['GET'])
+def projects():
+    return render_template('explore_projects.html', author=const.AUTHOR, version=const.VERSION)
+
+
+@bp_gui.route('/project-details', methods=['GET'])
+def project_details():
+    return render_template('project_details.html', author=const.AUTHOR, version=const.VERSION)
+
+
+@bp_gui.route('/contact', methods=['GET'])
+def contact():
+    return render_template('contact.html', author=const.AUTHOR, version=const.VERSION)

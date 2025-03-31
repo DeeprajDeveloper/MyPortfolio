@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block title %}Project Name{% endblock %}
+
+{% block content %}
+
+<section class="contact_container">
+
+    <div class="contact_title">Get in touch</div>
+
+    <div class="contact_inputs">
+        <form action="javascript:script(0);" method="post" class="contact_inputs_container">
+            <div class="input_container">
+                <div class="label_container">
+                    <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/User.svg') }}" />
+                    <label for="user_name">Name</label>
+                </div>
+                <input type="text" name="username" id="username" placeholder="Jane Doe" required>
+            </div>
+
+            <div class="input_container">
+                <div class="label_container">
+                    <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Mention-Square.svg') }}" />
+                    <label for="email">Email Address</label>
+                </div>
+                <input type="text" name="email" id="email" placeholder="janeDoeContact@email.com" required>
+            </div>
+
+            <div class="input_container">
+                <div class="label_container">
+                    <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Hashtag.svg') }}" />
+                    <label for="subject">Subject</label>
+                </div>
+                <input type="text" name="subject" id="subject" placeholder="Short summary of the message">
+            </div>
+
+            <div class="textarea_container">
+                <div class="label_container">
+                    <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Chat-Unread.svg') }}" />
+                    <label for="message">Message</label>
+                </div>
+                <textarea name="message" id="message" rows="10" placeholder="Write a message you want to share" required></textarea>
+            </div>
+
+            <button type="button" name="submit" id="submit" class="button_container">
+                Send Message
+                <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Plain.svg') }}" />
+            </button>
+        </form>
+
+        <div class="social_contacts">
+            <div class="social_title">Social Media</div>
+            
+            <div>
+                <a href="javascript:script(0);" class="social_media_links">
+                    <div class="social_text_container">
+                        <img class="icon_28x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/social_media/instagram.png') }}" />
+                        <span>@deep_dev_uiux | Instagram</span>
+                    </div>
+                    <img class="icon_20x" id="external" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/external-link.svg') }}" />
+                </a>
+
+                <a href="javascript:script(0);" class="social_media_links">
+                    <div class="social_text_container">
+                        <img class="icon_28x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/social_media/linkedin.png') }}" />
+                        <span>@deepraj-adhjikary | LinkedIn</span>
+                    </div>
+                    <img class="icon_20x" id="external" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/external-link.svg') }}" />
+                </a>
+
+                <a href="javascript:script(0);" class="social_media_links">
+                    <div class="social_text_container">
+                        <img class="icon_28x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/social_media/github.png') }}" />
+                        <span>@deeprajdeveloper | GitHub</span>
+                    </div>
+                    <img class="icon_20x" id="external" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/external-link.svg') }}" />
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+{% endblock %}
