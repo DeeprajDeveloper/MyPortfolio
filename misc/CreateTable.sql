@@ -20,7 +20,7 @@ FOREIGN KEY(projectId) REFERENCES projects(projectId)
 );
 
 CREATE TABLE IF NOT EXISTS projectTechStack (
-	projectId integer primary key NOT NULL UNIQUE,
+	projectId integer NOT NULL,
 	techStackName TEXT NULL,
 FOREIGN KEY(projectId) REFERENCES projects(projectId)
 );
