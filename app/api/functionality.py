@@ -4,7 +4,7 @@ from app.constants import (QueryString as Query, ResponseKeysList as Keys, Valid
 from utils import (custom_error as err, db_util as db, build_json_response as build)
 
 
-def get_all_projects(filter_parameters: str):
+def get_project_summary(filter_parameters: str):
     database_name: str = config.DATABASE_URL
 
     project_summary: list
@@ -13,7 +13,7 @@ def get_all_projects(filter_parameters: str):
     result_json: List[dict] = []
     project_element: dict = {}
 
-    if filter_parameters is None:
+    if filter_parameters in [None, '']:
         project_ids = db.dql_fetch_all_rows(database=database_name, sql_script=Query.PROJECT_ALL_IDS, return_list=False)
         if len(project_ids) > 1:
             for project_id in project_ids:
@@ -80,7 +80,7 @@ def get_project_details(project_id: str):
         return build.response_template(success=False, display_error=True, error=error, status_code=400, message="An error has occurred. Please refer the errorInformation section for details.")
 
 
-def get_my_info(filter_parameters: str) -> dict:
+def get_my_info(filter_parameters: str = None) -> dict:
     database_name: str = config.DATABASE_URL
     sql_query_list: list
     result_json: dict = {}
@@ -88,13 +88,13 @@ def get_my_info(filter_parameters: str) -> dict:
 
     banner_info: list
     about_me: str
-    top_display: list
+    top_display: str
     expertise: list
     experience: list
     try:
         banner_info = db.dql_fetch_all_rows_for_one_input(database=database_name, sql_script=Query.GENERAL_DATAVALUE_BY_KEY, data_input='displayBannerTechnologyStack', return_list=True)
         about_me = db.dql_fetch_all_rows_for_one_input(database=database_name, sql_script=Query.GENERAL_DATAVALUE_BY_KEY, data_input='aboutMe', return_list=True)[0]
-        top_display = db.dql_fetch_all_rows_for_one_input(database=database_name, sql_script=Query.GENERAL_DATAVALUE_BY_KEY, data_input='topDisplayProjectIdentifiers', return_list=True)
+        top_display = db.dql_fetch_all_rows_for_one_input(database=database_name, sql_script=Query.GENERAL_DATAVALUE_BY_KEY, data_input='topDisplayProjectIdentifiers', return_list=True)[0]
         expertise = db.dql_fetch_all_rows(database=database_name, sql_script=Query.EXPERTISE_LIST, return_list=False)
         experience = db.dql_fetch_all_rows(database=database_name, sql_script=Query.EXPERIENCE_LIST, return_list=False)
 
@@ -240,3 +240,11 @@ def _perform_insert(payload: dict, database_name: str):
             raise err.DataExists(message=f"Project that you are trying to insert already exists in the database. [ProjectId = {project_exists}] Please check.")
     except Exception as error:
         raise error
+
+
+def project_exists(project_id: Union[str, int]):
+    data_extract = db.dql_fetch_one_row_for_one_input(database=config.DATABASE_URL, sql_script=Query.PROJECT_DETAILS_BY_ID, data_input=project_id)
+    if data_extract is None:
+        return False
+    else:
+        return True

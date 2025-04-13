@@ -44,6 +44,21 @@ $color_github_bg_200        : #d5f1db;
 //                    DEFINING FONT FAMILY
 // ----------------------------------------------------------
 
-$font_header    : "Bricolage Grotesque", "Calibri", sans-serif;
-$font_body      : "Open Sans", "Calibri", sans-serif;
+@font-face {
+    font-family: "MinecrafterAlt";
+    src: url("../fonts/MinecrafterAlt.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: "MinecrafterReg";
+    src: url("../fonts/MinecrafterReg.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font_header            : "Bricolage Grotesque", "Calibri", sans-serif;
+$font_body              : "Open Sans", "Calibri", sans-serif;
+$font_minecrafter_alt   : 'MinecrafterAlt', $font_header, 'Calibri', sans-serif;
+$font_minecrafter_reg   : 'MinecrafterReg', $font_header, 'Calibri', sans-serif;

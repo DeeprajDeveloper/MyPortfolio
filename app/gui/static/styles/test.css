@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "MinecrafterAlt";
+  src: url("../fonts/MinecrafterAlt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinecrafterReg";
+  src: url("../fonts/MinecrafterReg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinecrafterAlt";
+  src: url("../fonts/MinecrafterAlt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinecrafterReg";
+  src: url("../fonts/MinecrafterReg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 svg {
   background-color: none;
   fill: inherit;
@@ -129,6 +153,15 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-100%);
   }
 }
+::selection {
+  background: #737373;
+  color: #fff;
+}
+
+::-webkit-selection {
+  background: #e5e5e5;
+}
+
 * {
   padding: 0;
   margin: 0;

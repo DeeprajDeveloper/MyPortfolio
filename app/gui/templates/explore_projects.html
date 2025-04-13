@@ -7,81 +7,30 @@
 <section class="projects_container">
     <div class="projects_title">Explore my projects</div>
     <div class="projects_content">
-
+        {% for project_item in my_projects %}
         <div class="project_item">
             <div class="project_details">
-                <div class="project_name">Project Name</div>
+                <div class="project_name">{{ project_item['projectName'] }}</div>
                 <div class="project_tech">
+                    {% for tech in project_item['technologyStackList'] %}
                     <div class="pill">
                         <svg viewBox="-0.625 -0.625 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="Text-Selection--Streamline-Solar-Ar" height="20" width="20"><desc>Text Selection Streamline Icon: https://streamlinehq.com</desc><path d="M7.03125 7.03125h4.6875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m9.375 11.71875 0 -4.6875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="M4.6875 3.125c0 0.8629453125000001 -0.6995546874999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995546874999999 -1.5625 -1.5625 0.6995546874999999 -1.5625 1.5625 -1.5625 1.5625 0.6995546874999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M4.6875 15.625c0 0.8629687500000001 -0.6995546874999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995312499999999 -1.5625 -1.5625 0.6995546874999999 -1.5625 1.5625 -1.5625 1.5625 0.6995312499999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M17.1875 3.125c0 0.8629453125000001 -0.6995312499999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995546874999999 -1.5625 -1.5625 0.6995312499999999 -1.5625 1.5625 -1.5625 1.5625 0.6995546874999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M17.1875 15.625c0 0.8629687500000001 -0.6995312499999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995312499999999 -1.5625 -1.5625 0.6995312499999999 -1.5625 1.5625 -1.5625 1.5625 0.6995312499999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M4.6875 15.625h9.375" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="M14.0625 3.125H4.6875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m15.625 14.0625 0 -9.375" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m3.125 4.6875 0 9.375" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path></svg>
-                        <span>UI/UX</span>
+                        <span>{{ tech }}</span>
                     </div>
-                    <div class="pill">
-                        <svg viewBox="-0.625 -0.625 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="Programming--Streamline-Solar-Ar" height="20" width="20"><desc>Programming Streamline Icon: https://streamlinehq.com</desc><path d="M1.5625 9.375c0 -3.6828515625000002 0 -5.5242734375 1.1441171875 -6.6683828125C3.8507265625000002 1.5625 5.6921484375 1.5625 9.375 1.5625c3.6828125000000003 0 5.524296875 0 6.6683593750000005 1.1441171875C17.1875 3.8507265625000002 17.1875 5.6921484375 17.1875 9.375c0 3.6828125000000003 0 5.524296875 -1.144140625 6.6683593750000005C14.899296875000001 17.1875 13.057812499999999 17.1875 9.375 17.1875c-3.6828515625000002 0 -5.5242734375 0 -6.6683828125 -1.144140625C1.5625 14.899296875000001 1.5625 13.057812499999999 1.5625 9.375Z" stroke="#000000" stroke-width="1.25"></path><path d="M13.28125 11.71875h-3.90625" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m5.46875 7.8125 0.183125 0.152578125c1.0013125 0.834453125 1.5019765625000001 1.251640625 1.5019765625000001 1.800546875 0 0.54890625 -0.5006640625000001 0.96609375 -1.5019765625000001 1.800546875L5.46875 11.71875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path></svg>
-                        <span>Python - Flask</span>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="project_desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et est pulvinar facilisis velit vivamus faucibus ipsum phasellus pellentesque. Mattis ornare euismod enim, diam vitae. Sed enim lacus eu convallis diam mi odio metus. Platea elit vulputate.
+                    {{ project_item['projectSummary'] }}
                 </div>
             </div>
             <div class="project_image">
-                <a class="view_project" href="javascript:script(0);">
+                <a class="view_project" href="{{ url_for('bp_gui.project_details', projectIdentifier=project_item['projectIdentifier']) }}">
                     <svg class="icon_24x" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Notebook-Square--Streamline-Solar"><desc>Notebook Square Streamline Icon: https://streamlinehq.com</desc><path fill-rule="evenodd" clip-rule="evenodd" d="M3.17157 2.17157C2 3.34315 2 5.22876 2 9v4c0 3.7712 0 5.6569 1.17157 6.8284C4.34315 21 6.22876 21 10 21h4c3.7712 0 5.6569 0 6.8284 -1.1716C22 18.6569 22 16.7712 22 13V9c0 -3.77124 0 -5.65685 -1.1716 -6.82843C19.6569 1 17.7712 1 14 1h-4C6.22876 1 4.34315 1 3.17157 2.17157ZM12.5074 15.7223l-0.0074 0.0039V7.28277l0.0219 -0.01235c0.5533 -0.32015 1.4466 -0.79686 2.1781 -0.99963 0.5404 -0.1498 1.2405 -0.21882 1.8568 -0.24909C17.3619 5.98216 18 6.64543 18 7.45154v5.45926c0 0.8329 -0.6793 1.5043 -1.5099 1.5662 -0.5062 0.0377 -1.0526 0.1013 -1.4901 0.2082 -0.8366 0.2044 -1.8826 0.7157 -2.4926 1.0371ZM6 7.49649v5.41431c0 0.8329 0.67934 1.5043 1.50991 1.5662 0.50617 0.0377 1.05257 0.1013 1.49009 0.2082 0.83655 0.2044 1.8826 0.7157 2.4926 1.0371l0.0074 0.0039V7.31094c-0.0119 -0.00569 -0.0237 -0.01161 -0.0354 -0.01776C10.851 6.9711 9.8239 6.4721 9 6.27079c-0.44408 -0.10851 -1.00033 -0.17235 -1.51283 -0.20988C6.66539 6.00074 6 6.67251 6 7.49649Z" stroke-width="1"></path></svg>
                     <span>View Project</span>
                 </a>
             </div>
         </div>
-
-        <div class="project_item">
-            <div class="project_details">
-                <div class="project_name">Project Name</div>
-                <div class="project_tech">
-                    <div class="pill">
-                        <svg viewBox="-0.625 -0.625 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="Text-Selection--Streamline-Solar-Ar" height="20" width="20"><desc>Text Selection Streamline Icon: https://streamlinehq.com</desc><path d="M7.03125 7.03125h4.6875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m9.375 11.71875 0 -4.6875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="M4.6875 3.125c0 0.8629453125000001 -0.6995546874999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995546874999999 -1.5625 -1.5625 0.6995546874999999 -1.5625 1.5625 -1.5625 1.5625 0.6995546874999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M4.6875 15.625c0 0.8629687500000001 -0.6995546874999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995312499999999 -1.5625 -1.5625 0.6995546874999999 -1.5625 1.5625 -1.5625 1.5625 0.6995312499999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M17.1875 3.125c0 0.8629453125000001 -0.6995312499999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995546874999999 -1.5625 -1.5625 0.6995312499999999 -1.5625 1.5625 -1.5625 1.5625 0.6995546874999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M17.1875 15.625c0 0.8629687500000001 -0.6995312499999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995312499999999 -1.5625 -1.5625 0.6995312499999999 -1.5625 1.5625 -1.5625 1.5625 0.6995312499999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M4.6875 15.625h9.375" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="M14.0625 3.125H4.6875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m15.625 14.0625 0 -9.375" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m3.125 4.6875 0 9.375" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path></svg>
-                        <span>UI/UX</span>
-                    </div>
-                    <div class="pill">
-                        <svg viewBox="-0.625 -0.625 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="Programming--Streamline-Solar-Ar" height="20" width="20"><desc>Programming Streamline Icon: https://streamlinehq.com</desc><path d="M1.5625 9.375c0 -3.6828515625000002 0 -5.5242734375 1.1441171875 -6.6683828125C3.8507265625000002 1.5625 5.6921484375 1.5625 9.375 1.5625c3.6828125000000003 0 5.524296875 0 6.6683593750000005 1.1441171875C17.1875 3.8507265625000002 17.1875 5.6921484375 17.1875 9.375c0 3.6828125000000003 0 5.524296875 -1.144140625 6.6683593750000005C14.899296875000001 17.1875 13.057812499999999 17.1875 9.375 17.1875c-3.6828515625000002 0 -5.5242734375 0 -6.6683828125 -1.144140625C1.5625 14.899296875000001 1.5625 13.057812499999999 1.5625 9.375Z" stroke="#000000" stroke-width="1.25"></path><path d="M13.28125 11.71875h-3.90625" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m5.46875 7.8125 0.183125 0.152578125c1.0013125 0.834453125 1.5019765625000001 1.251640625 1.5019765625000001 1.800546875 0 0.54890625 -0.5006640625000001 0.96609375 -1.5019765625000001 1.800546875L5.46875 11.71875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path></svg>
-                        <span>Python - Flask</span>
-                    </div>
-                </div>
-                <div class="project_desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et est pulvinar facilisis velit vivamus faucibus ipsum phasellus pellentesque. Mattis ornare euismod enim, diam vitae. Sed enim lacus eu convallis diam mi odio metus. Platea elit vulputate.
-                </div>
-            </div>
-            <div class="project_image">
-                <a class="view_project" href="javascript:script(0);">
-                    <svg class="icon_24x" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Notebook-Square--Streamline-Solar"><desc>Notebook Square Streamline Icon: https://streamlinehq.com</desc><path fill-rule="evenodd" clip-rule="evenodd" d="M3.17157 2.17157C2 3.34315 2 5.22876 2 9v4c0 3.7712 0 5.6569 1.17157 6.8284C4.34315 21 6.22876 21 10 21h4c3.7712 0 5.6569 0 6.8284 -1.1716C22 18.6569 22 16.7712 22 13V9c0 -3.77124 0 -5.65685 -1.1716 -6.82843C19.6569 1 17.7712 1 14 1h-4C6.22876 1 4.34315 1 3.17157 2.17157ZM12.5074 15.7223l-0.0074 0.0039V7.28277l0.0219 -0.01235c0.5533 -0.32015 1.4466 -0.79686 2.1781 -0.99963 0.5404 -0.1498 1.2405 -0.21882 1.8568 -0.24909C17.3619 5.98216 18 6.64543 18 7.45154v5.45926c0 0.8329 -0.6793 1.5043 -1.5099 1.5662 -0.5062 0.0377 -1.0526 0.1013 -1.4901 0.2082 -0.8366 0.2044 -1.8826 0.7157 -2.4926 1.0371ZM6 7.49649v5.41431c0 0.8329 0.67934 1.5043 1.50991 1.5662 0.50617 0.0377 1.05257 0.1013 1.49009 0.2082 0.83655 0.2044 1.8826 0.7157 2.4926 1.0371l0.0074 0.0039V7.31094c-0.0119 -0.00569 -0.0237 -0.01161 -0.0354 -0.01776C10.851 6.9711 9.8239 6.4721 9 6.27079c-0.44408 -0.10851 -1.00033 -0.17235 -1.51283 -0.20988C6.66539 6.00074 6 6.67251 6 7.49649Z" stroke-width="1"></path></svg>
-                    <span>View Project</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="project_item">
-            <div class="project_details">
-                <div class="project_name">Project Name</div>
-                <div class="project_tech">
-                    <div class="pill">
-                        <svg viewBox="-0.625 -0.625 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="Text-Selection--Streamline-Solar-Ar" height="20" width="20"><desc>Text Selection Streamline Icon: https://streamlinehq.com</desc><path d="M7.03125 7.03125h4.6875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m9.375 11.71875 0 -4.6875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="M4.6875 3.125c0 0.8629453125000001 -0.6995546874999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995546874999999 -1.5625 -1.5625 0.6995546874999999 -1.5625 1.5625 -1.5625 1.5625 0.6995546874999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M4.6875 15.625c0 0.8629687500000001 -0.6995546874999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995312499999999 -1.5625 -1.5625 0.6995546874999999 -1.5625 1.5625 -1.5625 1.5625 0.6995312499999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M17.1875 3.125c0 0.8629453125000001 -0.6995312499999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995546874999999 -1.5625 -1.5625 0.6995312499999999 -1.5625 1.5625 -1.5625 1.5625 0.6995546874999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M17.1875 15.625c0 0.8629687500000001 -0.6995312499999999 1.5625 -1.5625 1.5625s-1.5625 -0.6995312499999999 -1.5625 -1.5625 0.6995312499999999 -1.5625 1.5625 -1.5625 1.5625 0.6995312499999999 1.5625 1.5625Z" stroke="#000000" stroke-width="1.25"></path><path d="M4.6875 15.625h9.375" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="M14.0625 3.125H4.6875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m15.625 14.0625 0 -9.375" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m3.125 4.6875 0 9.375" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path></svg>
-                        <span>UI/UX</span>
-                    </div>
-                    <div class="pill">
-                        <svg viewBox="-0.625 -0.625 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="Programming--Streamline-Solar-Ar" height="20" width="20"><desc>Programming Streamline Icon: https://streamlinehq.com</desc><path d="M1.5625 9.375c0 -3.6828515625000002 0 -5.5242734375 1.1441171875 -6.6683828125C3.8507265625000002 1.5625 5.6921484375 1.5625 9.375 1.5625c3.6828125000000003 0 5.524296875 0 6.6683593750000005 1.1441171875C17.1875 3.8507265625000002 17.1875 5.6921484375 17.1875 9.375c0 3.6828125000000003 0 5.524296875 -1.144140625 6.6683593750000005C14.899296875000001 17.1875 13.057812499999999 17.1875 9.375 17.1875c-3.6828515625000002 0 -5.5242734375 0 -6.6683828125 -1.144140625C1.5625 14.899296875000001 1.5625 13.057812499999999 1.5625 9.375Z" stroke="#000000" stroke-width="1.25"></path><path d="M13.28125 11.71875h-3.90625" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path><path d="m5.46875 7.8125 0.183125 0.152578125c1.0013125 0.834453125 1.5019765625000001 1.251640625 1.5019765625000001 1.800546875 0 0.54890625 -0.5006640625000001 0.96609375 -1.5019765625000001 1.800546875L5.46875 11.71875" stroke="#000000" stroke-linecap="round" stroke-width="1.25"></path></svg>
-                        <span>Python - Flask</span>
-                    </div>
-                </div>
-                <div class="project_desc">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et est pulvinar facilisis velit vivamus faucibus ipsum phasellus pellentesque. Mattis ornare euismod enim, diam vitae. Sed enim lacus eu convallis diam mi odio metus. Platea elit vulputate.
-                </div>
-            </div>
-            <div class="project_image">
-                <a class="view_project" href="javascript:script(0);">
-                    <svg class="icon_24x" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Notebook-Square--Streamline-Solar"><desc>Notebook Square Streamline Icon: https://streamlinehq.com</desc><path fill-rule="evenodd" clip-rule="evenodd" d="M3.17157 2.17157C2 3.34315 2 5.22876 2 9v4c0 3.7712 0 5.6569 1.17157 6.8284C4.34315 21 6.22876 21 10 21h4c3.7712 0 5.6569 0 6.8284 -1.1716C22 18.6569 22 16.7712 22 13V9c0 -3.77124 0 -5.65685 -1.1716 -6.82843C19.6569 1 17.7712 1 14 1h-4C6.22876 1 4.34315 1 3.17157 2.17157ZM12.5074 15.7223l-0.0074 0.0039V7.28277l0.0219 -0.01235c0.5533 -0.32015 1.4466 -0.79686 2.1781 -0.99963 0.5404 -0.1498 1.2405 -0.21882 1.8568 -0.24909C17.3619 5.98216 18 6.64543 18 7.45154v5.45926c0 0.8329 -0.6793 1.5043 -1.5099 1.5662 -0.5062 0.0377 -1.0526 0.1013 -1.4901 0.2082 -0.8366 0.2044 -1.8826 0.7157 -2.4926 1.0371ZM6 7.49649v5.41431c0 0.8329 0.67934 1.5043 1.50991 1.5662 0.50617 0.0377 1.05257 0.1013 1.49009 0.2082 0.83655 0.2044 1.8826 0.7157 2.4926 1.0371l0.0074 0.0039V7.31094c-0.0119 -0.00569 -0.0237 -0.01161 -0.0354 -0.01776C10.851 6.9711 9.8239 6.4721 9 6.27079c-0.44408 -0.10851 -1.00033 -0.17235 -1.51283 -0.20988C6.66539 6.00074 6 6.67251 6 7.49649Z" stroke-width="1"></path></svg>
-                    <span>View Project</span>
-                </a>
-            </div>
-        </div>
+        {% endfor %}
         
     </div>
 </section>

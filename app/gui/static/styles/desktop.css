@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "MinecrafterAlt";
+  src: url("../fonts/MinecrafterAlt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinecrafterReg";
+  src: url("../fonts/MinecrafterReg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinecrafterAlt";
+  src: url("../fonts/MinecrafterAlt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinecrafterReg";
+  src: url("../fonts/MinecrafterReg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 svg {
   background-color: none;
   fill: inherit;
@@ -129,6 +153,15 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(-100%);
   }
 }
+::selection {
+  background: #737373;
+  color: #fff;
+}
+
+::-webkit-selection {
+  background: #e5e5e5;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -575,22 +608,21 @@ h1, h2, h3, h4, h5, h6 {
 .experties_container .experties {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .experties_container .experties_item {
-  width: 120px;
-  height: 120px;
-  border: 1px solid #fac905;
-  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 12px;
+  padding: 12px 20px;
   gap: 12px;
-  background-color: #fef4cd;
+  background-color: #fafafa;
 }
 .experties_container .experties_item span {
   font-size: 14px;
@@ -942,6 +974,59 @@ h1, h2, h3, h4, h5, h6 {
 .contact_container .social_contacts a.social_media_links:active {
   transform: translateY(2px);
   box-shadow: 2px 2px 1px 1px #737373;
+}
+
+.error_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+  height: 70dvh;
+}
+.error_container .error_header {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error_container .error_header .error_code {
+  font-size: 160px;
+  font-family: "MinecrafterAlt", "Bricolage Grotesque", "Calibri", sans-serif, "Calibri", sans-serif;
+  letter-spacing: 8px;
+}
+.error_container .error_header p {
+  font-family: "Open Sans", "Calibri", sans-serif;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.error_container .error_content {
+  margin: 48px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error_container .error_content p {
+  font-family: "Open Sans", "Calibri", sans-serif;
+  font-size: 16px;
+}
+.error_container .error_content .back_home {
+  margin: 16px;
+  transition: 0.2s all;
+  padding: 12px 20px;
+  background-color: #fefae6;
+  border: 1px solid #fbd437;
+  border-radius: 4px;
+}
+.error_container .error_content .back_home:hover {
+  border: 1px solid #fac905;
+  background-color: #fef4cd;
+  transition: 0.2s all;
 }
 
 footer {

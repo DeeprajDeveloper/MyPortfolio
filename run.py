@@ -3,11 +3,13 @@ from flask_swagger_ui import get_swaggerui_blueprint
 from flask_cors import CORS
 import config
 from app.api.routes import bp_api
-from app.auth.routes import bp_auth
+from app.auth.routes import bp_auth, jwt
 from app.gui.views import bp_gui
 
 app = Flask(__name__)
 CORS(app)
+app.config['JWT_SECRET_KEY'] = 'your-secret-key'  # Replace with a strong secret key
+jwt.init_app(app)
 app.json.sort_keys = False
 app.register_blueprint(bp_gui)
 app.register_blueprint(bp_api)

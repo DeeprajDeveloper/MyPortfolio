@@ -12,7 +12,7 @@ def health():
 @bp_api.route('/v1/get/exploreProjects', methods=['GET'])
 def v1_explore_projects():
     filter_field: str = request.args.get('projectIdentifier')
-    response_json = func.get_all_projects(filter_parameters=filter_field)
+    response_json = func.get_project_summary(filter_parameters=filter_field)
     return response_json
 
 

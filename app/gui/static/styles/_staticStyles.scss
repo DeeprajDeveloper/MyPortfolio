@@ -59,3 +59,11 @@ h1, h2, h3, h4, h5, h6 { font-family: $font_header; padding: 4px 0;}
         transform: translateX(-100%);
     }
 }
+
+::selection {
+    background: $color_prim_neutral_500;
+    color: #fff;
+}
+::-webkit-selection {
+    background: $color_prim_neutral_200;
+}
