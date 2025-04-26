@@ -14,16 +14,16 @@ h1, h2, h3, h4, h5, h6 { font-family: $font_header; padding: 4px 0;}
 //                      STATIC STYLES
 // ----------------------------------------------------------
 
-.icon_16x { width: 16px; height: 16px; background-color: none; margin: 0 4px;}
-.icon_20x { width: 20px; height: 20px; background-color: none; margin: 0 4px;}
-.icon_24x { width: 24px; height: 24px; background-color: none; margin: 0 4px;}
-.icon_28x { width: 28px; height: 28px; background-color: none; margin: 0 4px;}
-.icon_32x { width: 32px; height: 32px; background-color: none; margin: 0 4px;}
-.icon_36x { width: 36px; height: 36px; background-color: none; margin: 0 4px;}
-.icon_40x { width: 40px; height: 40px; background-color: none; margin: 0 4px;}
-.icon_44x { width: 44px; height: 44px; background-color: none; margin: 0 4px;}
-.icon_48x { width: 48px; height: 48px; background-color: none; margin: 0 4px;}
-.icon_52x { width: 52px; height: 52px; background-color: none; margin: 0 4px;}
+.icon_16x { width: 16px; height: 16px; background-color: none; margin: 4px 4px;}
+.icon_20x { width: 20px; height: 20px; background-color: none; margin: 4px 4px;}
+.icon_24x { width: 24px; height: 24px; background-color: none; margin: 4px 4px;}
+.icon_28x { width: 28px; height: 28px; background-color: none; margin: 4px 4px;}
+.icon_32x { width: 32px; height: 32px; background-color: none; margin: 4px 4px;}
+.icon_36x { width: 36px; height: 36px; background-color: none; margin: 4px 4px;}
+.icon_40x { width: 40px; height: 40px; background-color: none; margin: 4px 4px;}
+.icon_44x { width: 44px; height: 44px; background-color: none; margin: 4px 4px;}
+.icon_48x { width: 48px; height: 48px; background-color: none; margin: 4px 4px;}
+.icon_52x { width: 52px; height: 52px; background-color: none; margin: 4px 4px;}
 .lights_on { background-color: $color_sec_mutedgold_300; border: 1px solid $color_sec_mutedgold_300; }
 .lights_off { background-color: $color_prim_neutral_700; border: 1px solid $color_prim_neutral_700; }
 
@@ -57,6 +57,18 @@ h1, h2, h3, h4, h5, h6 { font-family: $font_header; padding: 4px 0;}
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+
+@keyframes animation-blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
 

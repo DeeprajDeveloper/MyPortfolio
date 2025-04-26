@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<section class="dialog_container" id="dialog">
+    <div class="chat_wrapper">
+        <div class="chat_messages">
+            <div class="dialog_header">
+                <h2>Chat with RajAI</h2>
+            </div>
+            <div class="dialog_body" id="dialog_body">
+                <p class="chat_notification" id="notice">
+                    <svg class="icon_20x" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Siren-Rounded--Streamline-Solar"><desc>Siren Rounded Streamline Icon: https://streamlinehq.com</desc><path d="M12.75 2c0 -0.41421 -0.3358 -0.75 -0.75 -0.75s-0.75 0.33579 -0.75 0.75v3c0 0.41421 0.3358 0.75 0.75 0.75s0.75 -0.33579 0.75 -0.75V2Z" stroke-width="1"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M2 21.25h2V16c0 -4.4183 3.58172 -8 8 -8 4.4183 0 8 3.5817 8 8v5.25h2c0.4142 0 0.75 0.3358 0.75 0.75s-0.3358 0.75 -0.75 0.75H2c-0.41421 0 -0.75 -0.3358 -0.75 -0.75s0.33579 -0.75 0.75 -0.75Zm10.75 -2.4507c0.4484 -0.2593 0.75 -0.7441 0.75 -1.2993 0 -0.8284 -0.6716 -1.5 -1.5 -1.5s-1.5 0.6716 -1.5 1.5c0 0.5552 0.3016 1.04 0.75 1.2993V21.25h1.5v-2.4507Zm0.8453 -7.5807c0.1554 -0.384 0.5927 -0.5692 0.9766 -0.4138 1.191 0.4821 2.141 1.4321 2.6231 2.623 0.1554 0.384 -0.0299 0.8212 -0.4138 0.9766 -0.384 0.1555 -0.8212 -0.0298 -0.9766 -0.4137 -0.3297 -0.8145 -0.9811 -1.4658 -1.7955 -1.7955 -0.3839 -0.1554 -0.5692 -0.5927 -0.4138 -0.9766Z" stroke-width="1"></path><path d="M21.5303 5.46967c0.2929 0.29289 0.2929 0.76777 0 1.06066l-1.5 1.5c-0.2929 0.29289 -0.7677 0.29289 -1.0606 0 -0.2929 -0.29289 -0.2929 -0.76777 0 -1.06066l1.5 -1.5c0.2929 -0.29289 0.7677 -0.29289 1.0606 0Z" stroke-width="1"></path><path d="M3.53033 5.46967c-0.29289 -0.29289 -0.76777 -0.29289 -1.06066 0s-0.29289 0.76777 0 1.06066l1.5 1.5c0.29289 0.29289 0.76777 0.29289 1.06066 0s0.29289 -0.76777 0 -1.06066l-1.5 -1.5Z" stroke-width="1"></path></svg>
+                    <span class="message">
+                        Hi there! This chat is being developed and worked on. Please check back later for updates.
+                    </span>
+                </p>
+                <!-- <p class="chat_bubble" id="admin">
+                    <span class="user_details"> System • {{ current_date_time }} </span>
+                    <span class="message">
+                         Hi there! This chat is being developed and worked on. Please check back later for updates.
+                    </span>
+                </p> -->
+            </div>
+        </div>
+
+        <form class="dialog_footer" onsubmit="sendChatToServer(event)" id="chat_form" method="POST">
+            <textarea class="text_input_disable" type="text" name="message_input" id="message_input" placeholder="Type your message here..." rows="10" disabled></textarea>
+            <button type="submit" class="send_message button_disable" id="send_message" disabled>
+                <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Plain.svg') }}" />
+            </button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

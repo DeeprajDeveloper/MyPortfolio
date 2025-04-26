@@ -138,7 +138,7 @@ def dql_fetch_one_row_for_one_input(database: str, sql_script: str, data_input: 
 
 def dml_dql_execute_parameterized_script(database: str, sql_script: str, data_input_list: dict) -> list:
     """
-    Executes a DML where the SQL Script contains parameters (such as 'var1', 'var2', etc. preceding with an 'at-symbol').
+    Executes a DML where the SQL Script contains parameters (such as 'var1', 'var2', etc. preceding with an 'question mark').
     Returns a BOOLEAN true/false depending on the statement execution.
 
     :param database: SQLITE database file path
@@ -164,3 +164,10 @@ def dml_dql_execute_parameterized_script(database: str, sql_script: str, data_in
     finally:
         sqlite_connection.close()
 # endregion
+
+
+def query_builder_from_payload(base_query: str, json_payload: dict, data_mapping: dict) -> str:
+    result_query: str = rf"{base_query} WHERE"
+    for key, item in json_payload.items():
+        result_query += rf"{data_mapping[key]} = {item} AND"
+    return result_query[:-4]

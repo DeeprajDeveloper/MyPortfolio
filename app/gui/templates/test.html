@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepraj Adhikary | Playground</title>
     <link rel="shortcut icon" href="{{ url_for('bp_gui.static', filename='images/logo/DA_BG_Black.svg') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ url_for('bp_gui.static', filename='styles/test.css') }}">
+    <link rel="stylesheet" href="{{ url_for('bp_gui.static', filename='styles/css/test.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -217,6 +217,28 @@
                 </div>
             </div>
         
+        </div>
+
+        <div class="element_container">
+            <button id="dialog_show_button" class="button_container">Open Dialog box</button>
+            <dialog class="dialog_container" id="dialog">
+                <div class="dialog_header">
+                    <h2>Chat Window</h2>
+                    <button type="button" class="close_dialog" id="dialog_close_button">
+                        <img class="icon_16x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Close.svg') }}" />
+                    </button>
+                </div>
+                <div class="dialog_body">
+                    <p class="chat_bubble" id="user">Hi there!, I would like some assistance in a particular subject. Can you please help?</p>
+                    <p class="chat_bubble" id="admin">This is a dialog box. You can add any content here.</p>
+                </div>
+                <div class="dialog_footer">
+                    <input type="text" name="chat_message" id="chat_message" placeholder="Type your message here..." />
+                    <button type="button" class="send_message" id="send_message">
+                        <img class="icon_20x" alt="Banner GIF" src="{{ url_for('bp_gui.static', filename='images/icons/Plain.svg') }}" />
+                    </button>
+                </div>
+            </dialog>
         </div>
         
     </div>

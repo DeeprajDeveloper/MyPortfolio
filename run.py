@@ -8,7 +8,8 @@ from app.gui.views import bp_gui
 
 app = Flask(__name__)
 CORS(app)
-app.config['JWT_SECRET_KEY'] = 'your-secret-key'  # Replace with a strong secret key
+app.config['JWT_SECRET_KEY'] = 'your-secret-key'
+app.config['SECRET_KEY'] = config.APP_SECRET_KEY
 jwt.init_app(app)
 app.json.sort_keys = False
 app.register_blueprint(bp_gui)

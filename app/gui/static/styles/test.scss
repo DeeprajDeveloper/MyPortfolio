@@ -361,3 +361,114 @@
     color: $color_prim_neutral_main !important;
     svg { fill: $color_prim_neutral_main !important;  }
 }
+
+.dialog_container {
+    border: 1px solid $color_prim_neutral_200;
+    padding: 16px;
+    border-radius: 12px;
+    width: 700px;
+    max-height: 500px;
+    .dialog_header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+    }
+    .close_dialog {
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        background-color: $color_error_red_100;
+        border: 1px solid $color_error_red;
+        // transition: .3s all;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 4px 4px 1px 1px $color_prim_neutral_300;
+
+        &:hover {
+            background-color: $color_error_red_200;
+            // transition: .3s all;
+        }
+
+        &:active {
+            transform: translateY(2px);
+            box-shadow: 2px 2px 1px 1px $color_prim_neutral_500;
+        }
+    }
+    .dialog_body {
+        padding: 12px 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .chat_bubble {
+            padding: 12px;
+            margin: 8px 0;
+        }
+
+        #user {
+            align-self: flex-end;
+            border: 1px solid $color_prim_neutral_200;
+            border-radius: 4px;
+            width: fit-content;
+            max-width: 400px;
+            box-shadow: 4px 4px 6px 0px $color_prim_neutral_200;
+        }
+        #admin {
+            align-self: flex-start;
+        }
+    }
+    .dialog_footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        #chat_message {
+            // margin-top: 8px;
+            padding: 8px 12px;
+            border: 1px solid transparent;
+            border: 1px solid $color_prim_neutral_200;
+            font-size: 14px;
+            width: 90%;
+            height: 44px;
+            background-color: $color_prim_neutral_100;
+            border-radius: 4px;
+            
+            &:focus {
+                outline: none;
+                border: 1px solid $color_sec_mutedgold_500;
+                background-color: $color_sec_mutedgold_050;
+            }
+        }
+
+        .send_message {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 44px;
+            width: 44px;
+            border-radius: 4px;
+            background-color: $color_sec_mutedgold_050;
+            border: 1px solid $color_sec_mutedgold_500;
+            &:hover {
+                background-color: $color_sec_mutedgold_100;
+            }
+        }
+    }
+}
+
+.dialog_container[open] {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+::backdrop {
+  background-color: $color_prim_neutral_200;
+  opacity: 0.75;
+  overflow: hidden;
+}

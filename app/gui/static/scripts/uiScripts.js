@@ -1,9 +1,8 @@
+// Description: This script handles the UI interactions for the web application, including the burger menu and chat dialog functionality.
+// Burger Menu
 var burgerMenu = document.getElementById("burger_menu");
 var burgerIcon = document.getElementById("burger_icon");
-// Menu Items
 var homeMenu = document.getElementById('home');
-var projectMenu = document.getElementById("project");
-var contactMenu = document.getElementById("contact");
 
 burgerIcon.addEventListener('click', () => {
     
@@ -26,5 +25,14 @@ document.addEventListener('click', (event) => {
 });
 
 homeMenu.addEventListener("click", () => { homeMenu.classList.add("active_menu_item"); });
+
+// Disable Submit Button after form is populated
+function disableSubmit(form) {
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    button.innerText = "Sending Message...";
+}
+
+
 
 

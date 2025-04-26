@@ -23,7 +23,7 @@ class QueryString:
     PROJECT_TECH_STACK_INSERT: str = r"INSERT INTO projectTechStack (?colList) VALUES (?data)"
     PROJECT_INSERT: str = r"INSERT INTO projects (?colList) VALUES (?data)"
     PROJECT_ID_BY_NAME: str = r"SELECT projectId from projects where projectName like '%?searchValue%'"
-    PROJECT_DETAILS_BY_ID = r"SELECT overview, problemStatement, solutionApproach, hasPreview, hasGitRepo from projectDetails where projectId = ?searchValue"
+    PROJECT_DETAILS_BY_ID = r"SELECT overview, problemStatement, solutionApproach, hasPreview, hasGitRepo, linkGitRepo, linkPreview from projectDetails where projectId = ?searchValue"
 
     # General Information
     GENERAL_INFO_LIST: str = r"SELECT keyName, dataValue FROM generalInformation ORDER BY rowId ASC"
@@ -41,6 +41,18 @@ class QueryString:
     EXPERIENCE_GET_ID_BY_NAME: str = r"SELECT experienceId FROM industryExperienceInformation WHERE experienceName = ?searchValue"
     EXPERIENCE_UPDATE_BY_ID: str = r"UPDATE industryExperienceInformation SET ?colName = '?data' WHERE experienceId = ?searchValue"
 
+    # Messages
+    MESSAGE_ADD: str = r"INSERT INTO inquiryMessages (?colList) VALUES (?data)"
+    MESSAGE_UPDATE: str = r"UPDATE inquiryMessages SET ?colName = ?data WHERE messageId in (?searchValue)"
+    MESSAGE_READ_ALL: str = r"SELECT * FROM inquiryMessages"
+    MESSAGE_READ_BY_ID: str = r"SELECT * FROM inquiryMessages WHERE messageId = ?searchValue"
+    MESSAGE_READ_BY_ISREAD: str = r"SELECT * FROM inquiryMessages WHERE isRead = ?searchValue"
+    MESSAGE_READ_BY_NAME: str = r"SELECT * FROM inquiryMessages WHERE requestorName = '?searchValue'"
+    MESSAGE_READ_BY_EMAIL: str = r"SELECT * FROM inquiryMessages WHERE requestorEmailAddress = '?searchValue'"
+    MESSAGE_READ_UNREAD_BY_ID: str = r"SELECT * FROM inquiryMessages WHERE isRead = 0 and messageId in (?searchValue)"
+    MESSAGE_UPDATE_READ_STATUS: str = r"UPDATE inquiryMessages SET isRead = 1 WHERE messageId in (?searchValue)"
+
+
 
 class ResponseKeysList:
     EXPERTISE_KEYS: list = ['expertiseId', 'expertiseName', 'iconImagePath']
@@ -51,6 +63,8 @@ class ValidIdentifiers:
     DATA_IDENTIFIERS: list = ['experienceId', 'expertiseId']
     UPDATE_PAYLOAD_KEYS: list = ['identifierName', 'identifierValue', 'updateKey', 'oldValue', 'newValue']
     INSERT_PAYLOAD_PROJECT_KEYS: list = ['projectName', 'projectSummary', 'technologyStackList', 'displayImageLocation']
+    INSERT_PAYLOAD_MESSAGE_KEYS: list = ['name', 'emailAddress', 'messageSubject', 'messageBody']
+    READ_PAYLOAD_MESSAGE_KEYS: list = ['name', 'emailAddress', 'messageSubject', 'messageBody', 'messageReceivedDatetime', 'isMessageRead']
     OPERATIONS: list = ['I', 'U', 'D']
 
 
@@ -80,3 +94,20 @@ class Mapping:
         "displayImageLocation": "imagePath",
         "technologyStackList": 'techStackName'
     }
+    INSERT_PAYLOAD_MESSAGES_MAPPING: dict = {
+        "name": "requestorName",
+        "emailAddress": "requestorEmailAddress",
+        "messageSubject": "subjectLine",
+        "messageBody": "messageDescription",
+        "messageReceivedDatetime": "sentDatetime"
+    }
+    READ_PAYLOAD_MESSAGES_MAPPING: dict = {
+        "name": QueryString.MESSAGE_READ_BY_NAME,
+        "emailAddress": QueryString.MESSAGE_READ_BY_EMAIL,
+        "messageIdentifier": QueryString.MESSAGE_READ_BY_ID,
+        "isMessageRead": QueryString.MESSAGE_READ_BY_ISREAD
+    }
+
+
+class AppDataConstants:
+    RANDOM_PROJECT_GEN_COUNT = 1
