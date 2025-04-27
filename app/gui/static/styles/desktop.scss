@@ -973,6 +973,13 @@
         #admin {
             align-self: flex-start;
         }
+
+        .image_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
     }
 
     .dialog_footer {

@@ -1,5 +1,4 @@
 from typing import Union
-from datetime import datetime
 from flask import Blueprint, jsonify, request
 from app.api import functionality as func
 
@@ -7,11 +6,14 @@ bp_api = Blueprint('bp_api', __name__, url_prefix='/api')
 chat_log = []  # Temporary in-memory storage
 
 
+# region HEALTH
 @bp_api.route('/health', methods=['GET'])
 def health():
     return jsonify({'apiStatus': 'healthy'})
+# endregion
 
 
+# region PROJECTS
 @bp_api.route('/v1/get/exploreProjects', methods=['GET'])
 def v1_explore_projects():
     filter_field: str = request.args.get('projectIdentifier')
@@ -26,6 +28,16 @@ def v1_project_details():
     return response_json
 
 
+@bp_api.route('/v1/insert/basicProjectInformation', methods=['POST'])
+def v1_insert_projects():
+    response_json: dict
+    request_json: dict = request.get_json()
+    response_json = func.insert_projects(json_input=request_json)
+    return response_json
+# endregion
+
+
+# region MY-INFORMATION
 @bp_api.route('/v1/get/myInformation', methods=['GET'])
 def v1_get_my_info():
     response_json: dict
@@ -40,16 +52,10 @@ def v1_update_my_info():
     request_json: dict = request.get_json()
     response_json = func.update_my_info(json_input=request_json)
     return response_json
+# endregion
 
 
-@bp_api.route('/v1/insert/basicProjectInformation', methods=['POST'])
-def v1_insert_projects():
-    response_json: dict
-    request_json: dict = request.get_json()
-    response_json = func.insert_projects(json_input=request_json)
-    return response_json
-
-
+# region CONTACT-MESSAGES
 @bp_api.route('/v1/message/add', methods=['POST'])
 def v1_message_add():
     response_json: dict
@@ -74,11 +80,13 @@ def v1_message_update_status():
         message_id = message_id.split(',')
     response_json = func.update_message_status(message_id)
     return response_json
+# endregion
 
 
+# region AI-CHATBOT
 @bp_api.route('/v1/chat/send', methods=['POST'])
 def chat_send_message():
     data = request.get_json()
     response_data = func.process_chat(data, chat_log)
     return jsonify(chat_log)
-
+# endregion
